@@ -25,13 +25,13 @@ var nippo = require("nippo")
 var config = {
   "output": {
     "service": "esa",
-    "team": "polidog",
-    "token": "27e082c09ea407f9e4b49afa94b3add568c00396b1720df508d8f8a5d14fdd5f",
+    "team": "your team name",
+    "token": "your token",
     "category": "report/%year%/%month%"
   },
   "input": {
     "service": "slack",
-    "token": "xoxp-2449639275-2449639279-2642519233-bb79e1",
+    "token": "your token",
     "channel": "report"
   },
   "formatter": {
