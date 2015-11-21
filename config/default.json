@@ -1,0 +1,11 @@
+{
+  "esa": {
+    "team": "",
+    "token": "",
+    "category": "report/%year%/%month%"
+  },
+  "slack": {
+    "token": "",
+    "channel": "#general"
+  }
+}

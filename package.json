@@ -1,0 +1,16 @@
+{
+  "name": "nippo",
+  "version": "0.0.1",
+  "description": "slack to esa",
+  "main": "lib/nippo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryota Mochizuki",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^1.17.1",
+    "esa-nodejs": "0.0.6",
+    "slack-node": "^0.1.3"
+  }
+}
