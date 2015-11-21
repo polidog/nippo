@@ -1,6 +1,6 @@
 {
   "name": "nippo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "slackの分報からesaに日報を作るあれ",
   "main": "lib/nippo.js",
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "author": "Ryota Mochizuki",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/polidog/nippo.git"
+  },
   "dependencies": {
     "config": "^1.17.1",
     "esa-nodejs": "0.0.6",
