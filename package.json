@@ -1,7 +1,7 @@
 {
   "name": "nippo",
   "version": "0.0.1",
-  "description": "slack to esa",
+  "description": "slackの分報からesaに日報を作るあれ",
   "main": "lib/nippo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
