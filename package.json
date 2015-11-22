@@ -1,6 +1,6 @@
 {
   "name": "nippo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "slackの分報からesaに日報を作るあれ",
   "main": "lib/nippo.js",
   "scripts": {
