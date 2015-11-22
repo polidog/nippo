@@ -45,6 +45,11 @@ var config = {
 
 nippo(config, 1); // 1を指定することで、1日前の日報を作成します。
 
+// ちなみにこんな事もできます
+nippo(config, 1).then(function(outputResponse){
+  console.log(outputResponse);
+});
+
 ```
 
 ## esa.ioに反映するときのフォーマットを変更する
