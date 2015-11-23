@@ -8,9 +8,22 @@ nippo
 しかし、分報をまとめて日報にしたい人も多いはずです。(おそらく)  
 
 確かにSlackにはアーカイブ機能がありますが、他のドキュメントツールと連携して日報を作れたなら、分報がより良いモノになる気がします。  
-ということで、Slackから[esa.io](https://esa.io/)やその他のドキュメントサービスに日報としてまとまられるツールを作りました。
 
-今後、Slack以外のチャットツールや、esa.io以外のドキュメントツールにも対応していこうと思います。
+またチャットツールはSlackだけではないし、分報は非エンジニアな人たちにも有効な手段だと思います。  
+ただ、管理者(上司)側の視点で考えれば、分報をまとめて日報に出来たらいいのではと僕は考えました。  
+
+そこで作ったのがこの`nippo`です。
+
+input(チャットツール)から、output(esa, qiita team等)に日報として、出力してくれるだけのツールです。
+
+v0.2.0現在で対応しているサービスは以下のとおり。
+
+- input
+ - [slack](https://slack.com/)
+- output
+ - [esa.io](https://esa.io/)
+ - [qiita team](https://teams.qiita.com/)
+
 
 ## 使い方
 
@@ -52,9 +65,40 @@ nippo(config, 1).then(function(outputResponse){
 
 ```
 
-## esa.ioに反映するときのフォーマットを変更する
+### QiitaTeamで使ってみる。
 
-自分でesa.ioに保存するドキュメントのフォーマットを変更することも出来ます。
+```
+var nippo = require("nippo")
+
+var config = {
+  "output": {
+    "service": "qiitateam",
+    "team": "hoge", // https://hoge.qiita.com
+    "token": "your token",
+    "category": "report/%year%/%month%"
+  },
+  "input": {
+    "service": "slack",
+    "token": "your token",
+    "channel": "report"
+  },
+  "formatter": {
+    "service": "default"
+  }
+};
+
+nippo(config, 1); // 1を指定することで、1日前の日報を作成します。
+
+// ちなみにこんな事もできます
+nippo(config, 1).then(function(outputResponse){
+  console.log(outputResponse);
+});
+
+```
+
+## 日報に反映するときのフォーマットを変更する
+
+esa.ioやqiita teamに投稿するドキュメントを加工することも可能です。
 
 まずは適当なディレクトリにフォーマッターを用意します。
 
@@ -113,7 +157,22 @@ nippo({
 これでカスタムのフォーマッターを使うことが出来ます。
 
 
+## イメージ的なあれ
+
+こんなSlackで投稿したものが
+
+![slack](./screenshot/slack.png)
+
+こんな風にまとめられます。
+
+![esa](./screenshot/esa.png)
+
+![qiita](./screenshot/qiita.png)
+
+
+
 
 ## 最後に
 
 コードは糞コードですごめんなさい・・・
+テストはこれから頑張って書きます。。
